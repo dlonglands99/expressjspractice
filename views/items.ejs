@@ -1,0 +1,15 @@
+<%- include ("partials/header") %>
+
+<h1>Items list</h1>
+
+<% for (item of items) { %>
+    <li><%= item.name %> - <strong>$<%= item.price %></strong></li>
+<% } %>
+
+<form action="/addItem" method="POST">
+    <input type="text" name="itemName" placeholder="New Item">
+    <input type="text" name="itemPrice" placeholder="$0.00">
+    <button>Add Item</button>
+</form>
+
+<%- include ("partials/footer") %>
